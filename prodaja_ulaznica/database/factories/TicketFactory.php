@@ -3,6 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use \App\Models\User;
+use \App\Models\Venue;
+use \App\Models\Artist;
 
 class TicketFactory extends Factory
 {
@@ -14,7 +17,11 @@ class TicketFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->title(),
+            'description' => $this->faker->paragraph(),
+            'artist_id' => Artist::factory(),
+            'user_id' => User::factory(),
+            'venue_id' => Venue::factory()
         ];
     }
 }

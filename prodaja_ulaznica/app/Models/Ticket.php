@@ -11,7 +11,7 @@ class Ticket extends Model
 
     protected $fillable = [
         'title',
-        'description',
+        'about',
         'artist_id',
         'venue_id'
     ];
