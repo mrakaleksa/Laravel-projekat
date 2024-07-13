@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'genre',
+        'about',
+
+    ];
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

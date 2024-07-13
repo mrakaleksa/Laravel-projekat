@@ -8,4 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class Ticket extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'artist_id',
+        'venue_id'
+    ];
+
+    public function artist()
+    {
+        return $this->belongsTo(Artist::class);
+    }
+
+    public function venue()
+    {
+        return $this->belongsTo(Venue::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
