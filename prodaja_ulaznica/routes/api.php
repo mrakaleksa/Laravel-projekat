@@ -46,11 +46,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::resource('delete-tickets', TicketController::class)->only(['destroy']);
 
     Route::resource('update-artists', ArtistController::class)->only(['update']);
-    Route::resource('buy-artists', ArtistController::class)->only(['store']);
+    Route::resource('add-artists', ArtistController::class)->only(['store']);
     Route::resource('delete-artists', ArtistController::class)->only(['destroy']);
 
     Route::resource('update-venues', VenueController::class)->only(['update']);
-    Route::resource('buy-venues', VenueController::class)->only(['store']);
+    Route::resource('add-venues', VenueController::class)->only(['store']);
     Route::resource('delete-venues', VenueController::class)->only(['destroy']);
     // API route for logout user
     Route::post('/logout', [AuthController::class, 'logout']);
