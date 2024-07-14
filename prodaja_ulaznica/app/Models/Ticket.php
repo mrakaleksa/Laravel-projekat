@@ -13,7 +13,8 @@ class Ticket extends Model
         'title',
         'about',
         'artist_id',
-        'venue_id'
+        'venue_id',
+        'user_id'
     ];
 
     public function artist()

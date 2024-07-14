@@ -7,7 +7,7 @@ use App\Models\Ticket;
 
 class UserTicketController extends Controller
 {
-    public function show($user_id)
+    public function index($user_id)
     {
         $tickets = Ticket::get()->where('user_id', $user_id);
         if (is_null($tickets)) {

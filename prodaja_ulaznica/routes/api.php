@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('users.posts', UserTicketController::class)->only(['index']);
+Route::resource('users.tickets', UserTicketController::class)->only(['index']);
 Route::resource('tickets', TicketController::class)->only(['index']);
 
 Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
