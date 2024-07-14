@@ -41,17 +41,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function (Request $request) {
         return auth()->user();
     });
-    Route::resource('update-tickets', TicketController::class)->only(['update']);
-    Route::resource('buy-tickets', TicketController::class)->only(['store']);
-    Route::resource('delete-tickets', TicketController::class)->only(['destroy']);
 
-    Route::resource('update-artists', ArtistController::class)->only(['update']);
-    Route::resource('add-artists', ArtistController::class)->only(['store']);
-    Route::resource('delete-artists', ArtistController::class)->only(['destroy']);
-
-    Route::resource('update-venues', VenueController::class)->only(['update']);
-    Route::resource('add-venues', VenueController::class)->only(['store']);
-    Route::resource('delete-venues', VenueController::class)->only(['destroy']);
+    Route::resource('tickets', TicketController::class)->only(['update', 'store', 'destroy']);
+    Route::resource('artists', ArtistController::class)->only(['update', 'store', 'destroy']);
+    Route::resource('venues', VenueController::class)->only(['update', 'store', 'destroy']);
     // API route for logout user
     Route::post('/logout', [AuthController::class, 'logout']);
 });
